@@ -202,8 +202,9 @@ section .topo-do-site .img-topo-site img:hover {
     color: white;
 }
 
+/* Menu mobile */
 .menu-mobile {
-    display: none; 
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
@@ -212,31 +213,14 @@ section .topo-do-site .img-topo-site img:hover {
     background-color: #333;
     padding: 20px;
     z-index: 1000;
-    transform: translateX(100%); 
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease;
+    transform: translateX(100%);
 }
 
 .menu-mobile.open {
-    display: block; 
+    display: block;
     transform: translateX(0);
 }
-
-/* Sobreposição para o Menu Mobile */
-.overlay-menu {
-    display: none; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-}
-
-.overlay-menu.active {
-    display: block; 
-}
-
 
 .menu-mobile ul {
     display: flex;
@@ -247,13 +231,11 @@ section .topo-do-site .img-topo-site img:hover {
 .menu-mobile ul li a {
     color: white;
     font-size: 18px;
-    text-decoration: none;
 }
 
 .menu-mobile ul li a:hover {
     color: aqua;
 }
-
 
 .btn-fechar {
     font-size: 24px;
@@ -262,20 +244,29 @@ section .topo-do-site .img-topo-site img:hover {
     margin-bottom: 20px;
 }
 
-
-.btn-abrir-menu {
+/* Sobreposição */
+.overlay-menu {
     display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
 }
 
-@media screen and (max-width: 1000px) {
-    .menu-desktop, .btn-contato, .btn-jogar {
-        display: none; 
+.overlay-menu.active {
+    display: block;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .menu-desktop,.btn-contato, .btn-jogar {
+        display: none;
     }
 
     .btn-abrir-menu {
-        display: block; 
+        display: block;
     }
 }

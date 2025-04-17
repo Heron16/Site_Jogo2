@@ -232,64 +232,24 @@ header {
 .overlay-menu.active {
     display: block; /* Exibe a sobreposição quando a classe "active" é adicionada */
 }
-/* Responsividade para telas menores */
-@media screen and (max-width: 768px) {
-    /* Esconde o menu desktop e exibe o botão do menu mobile */
+
+/* Responsividade */
+@media screen and (max-width: 1020px) {
+    .flex {
+        flex-direction: column;
+    }
+
     .menu-desktop {
         display: none;
     }
 
-    .btn-abrir-menu {
-        display: block;
+    .btn-contato {
+        display: none;
     }
 
-    /* Ajusta o layout do cabeçalho */
-    .Interface {
-        flex-direction: column;
-        align-items: center;
+    .btn-jogar {
+        display: block; /* Certifique-se de que o botão "Jogar" está visível */
         text-align: center;
-    }
-
-    .logo img {
-        max-width: 150px;
-    }
-
-    .btn-contato, .btn-jogar {
-        margin-top: 10px;
-    }
-
-    /* Ajusta a seção principal */
-    .Historia {
-        padding: 20px;
-        text-align: center;
-    }
-
-    .Historia .titulo {
-        font-size: 24px;
-    }
-
-    .Historia p {
-        font-size: 16px;
-    }
-
-    .btn-jogar2 button {
-        width: 100%;
-        padding: 15px;
-        font-size: 18px;
-    }
-}
-
-/* Responsividade para telas muito pequenas (ex.: celulares antigos) */
-@media screen and (max-width: 480px) {
-    .Historia .titulo {
-        font-size: 20px;
-    }
-
-    .Historia p {
-        font-size: 14px;
-    }
-
-    .btn-jogar2 button {
-        font-size: 16px;
+        margin-top: 20px;
     }
 }
