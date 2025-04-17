@@ -4,27 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--GOOGLE FONTES-->
+    <!-- GOOGLE FONTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <!--Fim GOOGLE FONTES-->
-    <link rel="stylesheet" href="https://icons.getbootstrap.com/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Fim GOOGLE FONTES -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="CSS/contato.css">
     <link rel="shortcut icon" href="Images/Iconi.png" type="image/x-icon">
     <title>As Aventuras de Lucas</title>
 </head>
 
 <body>
-
     <header>
         <div class="Interface">
             <div class="logo">
                 <a href="#">
-                    <img src="Images/logo.png" Logo do jogo>
+                    <img src="Images/logo.png" alt="Logo do jogo">
                 </a>
-            </div><!--logo-->
+            </div><!-- logo -->
             <nav class="menu-desktop">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -60,22 +58,22 @@
                 </nav>
             </div>
             <div class="overlay-menu" id="overlay-menu"></div>
-        </div><!--Interface-->
+        </div><!-- Interface -->
     </header>
+
     <main>
         <section class="formulario">
             <div class="interface">
                 <div class="formulario">
-                    <h2 class="titulos">Entrer em <span> Contato</span></h2>
+                    <h2 class="titulos">Entrar em <span>Contato</span></h2>
                     <form action="">
-                        <input type="text" name="" id="" placeholder="Digite seu nome:" required>
-                        <input type="email" name="" id="" placeholder="Digite seu email:" required>
-                        <input type="tel" name="" id="" placeholder="Digite seu telefone:">
-                        <textarea name="" id="" placeholder="Digite sua mensagem" required></textarea>
+                        <input type="text" placeholder="Digite seu nome:" required>
+                        <input type="email" placeholder="Digite seu email:" required>
+                        <input type="tel" placeholder="Digite seu telefone:">
+                        <textarea placeholder="Digite sua mensagem" required></textarea>
                         <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
-
                     </form>
-                </div><!--formulario-->
+                </div><!-- formulario -->
             </div>
         </section>
 
@@ -83,45 +81,46 @@
             <div class="interface">
                 <div class="line-footer">
                     <div class="flex">
-                    <div class="logo-footer">
-                        <img src="Images/logo.png" alt="logo">
-                    </div><!--logo footer-->
-                    <div class="btn-social">
-                        <a href="https://www.instagram.com/hsilva018/"><button><i class="bi bi-instagram"></i></button></a>
-                        <a href="https://www.youtube.com/@heronjose9654"><button><i class="bi bi-youtube"></i></button></a>
-                        <a href="https://www.linkedin.com/in/heron-jos%C3%A9-2653242a5/"><button><i class="bi bi-linkedin"></i></button></a>
-                    </div><!--btn social-->
-                </div><!--flex-->
-            </div> <!--line footer-->
-            <div class="line-footer ke">
-                <p><i class="bi bi-envelope-fill"></i><a
-                        href="mailto:s.heron@escola.pr.gov.br">s.heron@escola.pr.gov.br</a></p>
-            </div><!--line footer-->>
-            </div><!--Interface-->
+                        <div class="logo-footer">
+                            <img src="Images/logo.png" alt="Logo">
+                        </div><!-- logo footer -->
+                        <div class="btn-social">
+                            <a href="https://www.instagram.com/hsilva018/"><button><i class="bi bi-instagram"></i></button></a>
+                            <a href="https://www.youtube.com/@heronjose9654"><button><i class="bi bi-youtube"></i></button></a>
+                            <a href="https://www.linkedin.com/in/heron-jos%C3%A9-2653242a5/"><button><i class="bi bi-linkedin"></i></button></a>
+                        </div><!-- btn social -->
+                    </div><!-- flex -->
+                </div><!-- line footer -->
+                <div class="line-footer">
+                    <p><i class="bi bi-envelope-fill"></i><a href="mailto:s.heron@escola.pr.gov.br">s.heron@escola.pr.gov.br</a></p>
+                </div><!-- line footer -->
+            </div><!-- Interface -->
         </footer>
+
         <script>
             const btnAbrirMenu = document.getElementById('btn-menu');
             const menuMobile = document.getElementById('menu-mobile');
             const btnFecharMenu = document.getElementById('btn-fechar');
             const overlayMenu = document.getElementById('overlay-menu');
-    
+
             // Abrir menu
             btnAbrirMenu.addEventListener('click', () => {
                 menuMobile.classList.add('open');
                 overlayMenu.classList.add('active');
             });
-    
+
             // Fechar menu
             btnFecharMenu.addEventListener('click', () => {
                 menuMobile.classList.remove('open');
                 overlayMenu.classList.remove('active');
             });
-    
+
             overlayMenu.addEventListener('click', () => {
                 menuMobile.classList.remove('open');
                 overlayMenu.classList.remove('active');
             });
         </script>
+    </main>
 </body>
 
 </html>
