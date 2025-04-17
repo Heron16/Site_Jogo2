@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>As Aventuras de Lucas</title>
-
-    <link rel="stylesheet" href="sobre.css">
+    <link rel="shortcut icon" href="Images/Iconi.png" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/sobre.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -14,12 +15,12 @@
         <div class="Interface">
             <div class="logo">
                 <a href="#">
-                    <img src="Images/logo.png" Logo do jogo>
+                    <img src="Images/logo.png" alt="Logo do jogo">
                 </a>
-            </div><!--logo-->
+            </div><!-- logo -->
             <nav class="menu-desktop">
                 <ul>
-                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
                     <li><a href="galeria.html">Galeria</a></li>
                 </ul>
@@ -34,11 +35,30 @@
                     <button>Jogar</button>
                 </a>
             </div>
-        </div><!--Interface-->
+            <div class="btn-abrir-menu" id="btn-menu">
+                <i class="bi bi-list"></i>
+            </div>
+            <div class="menu-mobile" id="menu-mobile">
+                <div class="btn-fechar" id="btn-fechar">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="jogar.html">Jogar</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="overlay-menu" id="overlay-menu"></div>
+        </div><!-- Interface -->
     </header>
+
     <main>
         <section class="Historia">
-            <h2 class="titulo"><span>Historia</span> do Jogo</h2>
+            <h2 class="titulo"><span>História</span> do Jogo</h2>
             <p>Em uma cidade marcada pela desigualdade social, Lucas, um jovem pobre e sonhador, se vê
                 apaixonado por Sofia, a filha de um influente empresário. Apesar de seus sentimentos mútuos, os
                 pais de Sofia desaprovam o relacionamento devido à condição financeira de Lucas. Quando a cidade
@@ -48,13 +68,11 @@
                 estão à espreita, Lucas e Sofia provam que o amor é a força mais poderosa de todas. O jogo
                 convida os jogadores a explorar a cidade, enfrentar desafios e descobrir que, mesmo nas
                 situações mais sombrias, a luz do amor pode brilhar intensamente. </p>
-            <p>Venha jogar e ajudar Lucas a vencer esse mostro e poder .</p>
-
-
+            <p>Venha jogar e ajudar Lucas a vencer esse monstro e poder salvar Sofia.</p>
         </section>
 
         <section class="objetivo">
-            <h2 class="Informações"> <span>Objetivo</span> do Jogo</h2>
+            <h2 class="Informações"><span>Objetivo</span> do Jogo</h2>
             <p>
                 O jogo segue a história de Lucas, que precisa destruir caixotes espalhados pelo cenário e coletar 3
                 chaves para salvar sua amada, Sofia. No entanto, cada caixote está protegido por zumbis, que farão de
@@ -66,11 +84,32 @@
                 salvará Sofia.
             </p>
             <p>Boa sorte e prepare-se para enfrentar os perigos que estão por vir!</p>
-
-
         </section>
-
     </main>
+
+    <script>
+        const btnAbrirMenu = document.getElementById('btn-menu');
+        const menuMobile = document.getElementById('menu-mobile');
+        const btnFecharMenu = document.getElementById('btn-fechar');
+        const overlayMenu = document.getElementById('overlay-menu');
+
+        // Abrir menu
+        btnAbrirMenu.addEventListener('click', () => {
+            menuMobile.classList.add('open');
+            overlayMenu.classList.add('active');
+        });
+
+        // Fechar menu
+        btnFecharMenu.addEventListener('click', () => {
+            menuMobile.classList.remove('open');
+            overlayMenu.classList.remove('active');
+        });
+
+        overlayMenu.addEventListener('click', () => {
+            menuMobile.classList.remove('open');
+            overlayMenu.classList.remove('active');
+        });
+    </script>
 </body>
 
 </html>
