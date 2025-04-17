@@ -202,9 +202,9 @@ section .topo-do-site .img-topo-site img:hover {
     color: white;
 }
 
-/* Menu mobile */
+/* Menu Mobile */
 .menu-mobile {
-    display: none;
+    display: none; /* Escondido por padrão */
     position: fixed;
     top: 0;
     right: 0;
@@ -213,40 +213,18 @@ section .topo-do-site .img-topo-site img:hover {
     background-color: #333;
     padding: 20px;
     z-index: 1000;
-    transition: transform 0.3s ease;
-    transform: translateX(100%);
+    transform: translateX(100%); /* Escondido fora da tela */
+    transition: transform 0.3s ease-in-out;
 }
 
 .menu-mobile.open {
-    display: block;
-    transform: translateX(0);
+    display: block; /* Exibe o menu quando a classe "open" é adicionada */
+    transform: translateX(0); /* Move o menu para dentro da tela */
 }
 
-.menu-mobile ul {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.menu-mobile ul li a {
-    color: white;
-    font-size: 18px;
-}
-
-.menu-mobile ul li a:hover {
-    color: aqua;
-}
-
-.btn-fechar {
-    font-size: 24px;
-    cursor: pointer;
-    color: white;
-    margin-bottom: 20px;
-}
-
-/* Sobreposição */
+/* Sobreposição para o Menu Mobile */
 .overlay-menu {
-    display: none;
+    display: none; /* Escondido por padrão */
     position: fixed;
     top: 0;
     left: 0;
@@ -257,65 +235,49 @@ section .topo-do-site .img-topo-site img:hover {
 }
 
 .overlay-menu.active {
-    display: block;
+    display: block; /* Exibe a sobreposição quando a classe "active" é adicionada */
 }
 
-/* Responsividade */
-@media screen and (max-width: 768px) {
-    .menu-desktop,.btn-contato, .btn-jogar {
-        display: none;
-    }
-
-    .btn-abrir-menu {
-        display: block;
-    }
-}
-/* Estilo para a seção de commodities */
-.commodities {
-    padding: 50px 4%;
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
-.commodities h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-.grid-commodities {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+/* Links do Menu Mobile */
+.menu-mobile ul {
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
-.commodity {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+.menu-mobile ul li a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
 }
 
-.commodity img {
-    max-width: 100%;
-    border-radius: 8px;
-    margin-bottom: 15px;
+.menu-mobile ul li a:hover {
+    color: aqua;
 }
 
-.commodity h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #333;
+/* Botão para Fechar o Menu */
+.btn-fechar {
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    margin-bottom: 20px;
 }
 
-.commodity p {
-    font-size: 16px;
-    color: #666;
+/* Botão para Abrir o Menu */
+.btn-abrir-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
 }
 
-.commodity:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* Exibir o Botão do Menu Mobile em Telas Pequenas */
+@media screen and (max-width: 768px) {
+    .menu-desktop, .btn-contato, .btn-jogar {
+        display: none; /* Esconde o menu desktop e os botões */
+    }
+
+    .btn-abrir-menu {
+        display: block; /* Exibe o botão do menu mobile */
+    }
 }
