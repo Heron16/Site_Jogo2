@@ -70,8 +70,8 @@
                         <input type="text" placeholder="Digite seu nome:" required>
                         <input type="email" placeholder="Digite seu email:" required>
                         
-                        <!-- Campo de telefone com máscara -->
-                        <input type="tel" id="telefone" placeholder="Digite seu telefone:" required>
+                        <!-- Campo de telefone com máscara para DDD + 9 dígitos -->
+                        <input type="tel" id="telefone" placeholder="Digite seu telefone (DD + 9 dígitos):" required>
                         
                         <textarea placeholder="Digite sua mensagem" required></textarea>
                         <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
@@ -123,15 +123,18 @@
                 overlayMenu.classList.remove('active');
             });
 
-            // Máscara de telefone (DDD + número)
+            // Máscara de telefone para DDD + 9 dígitos
             document.getElementById('telefone').addEventListener('input', function(event) {
-                let telefone = event.target.value.replace(/\D/g, '');
+                let telefone = event.target.value.replace(/\D/g, ''); // Remove tudo que não for número
+                if (telefone.length > 11) telefone = telefone.substring(0, 11); // Limita a 11 dígitos
+
+                // Adiciona máscara DDD + 9 dígitos
                 if (telefone.length <= 2) {
                     telefone = telefone.replace(/^(\d{0,2})/, '($1');
-                } else if (telefone.length <= 6) {
-                    telefone = telefone.replace(/^(\d{2})(\d{0,4})/, '($1) $2');
+                } else if (telefone.length <= 7) {
+                    telefone = telefone.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
                 } else {
-                    telefone = telefone.replace(/^(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+                    telefone = telefone.replace(/^(\d{2})(\d{5})(\d{0,4})/, '($1) $2$3');
                 }
                 event.target.value = telefone;
             });
